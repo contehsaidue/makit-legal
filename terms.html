@@ -30,9 +30,39 @@
         }
         
         .header {
-            background: linear-gradient(135deg, #2563EB 0%, #3B82F6 100%);
+            position: relative;
             padding: 40px 32px;
             text-align: center;
+            background-image: url('assets/bayna-white-logo.png');
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(37, 99, 235, 0.85);
+            z-index: 1;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* Optional: Add logo display */
+        .bayna-logo {
+            width: 80px;
+            height: auto;
+            margin-bottom: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
         }
         
         .header h1 {
@@ -99,7 +129,7 @@
         .note {
             background: #FEF3C7;
             padding: 16px;
-            border-radius: 12px;
+            borderRadius: 12px;
             border-left: 4px solid #F59E0B;
             margin: 20px 0;
         }
@@ -163,20 +193,25 @@
             .section-title {
                 font-size: 20px;
             }
+            
+            .bayna-logo {
+                width: 60px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1>Terms of Service</h1>
-            <div class="effective-date">Effective Date: May 12, 2025</div>
-            <div class="last-updated">Last Updated: May 12, 2025</div>
+            <div class="header-content">
+                <h1>Terms of Service</h1>
+                
+            </div>
         </div>
         
         <div class="content">
             <div class="section">
-                <p>Welcome to Bayna.</p>
+                <p><b>Welcome to Bayna.</b></p>
                 <p>Bayna is a digital marketplace platform that connects buyers, sellers, customers, and independent service providers across Sierra Leone. By accessing or using the Bayna mobile application, website, or related services, you agree to comply with and be bound by these Terms of Service.</p>
             </div>
             

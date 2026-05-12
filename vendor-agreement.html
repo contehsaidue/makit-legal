@@ -2,30 +2,460 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Vendor Agreement - Bayna</title>
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 40px 20px; background-color: #f9f9f9; }
-        .container { background: white; padding: 40px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
-        h1 { color: #1a1a1a; border-bottom: 2px solid #007AFF; padding-bottom: 10px; }
-        h2 { color: #007AFF; margin-top: 30px; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #1a202c;
+            background: #f7fafc;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            position: relative;
+            padding: 40px 32px;
+            text-align: center;
+            background-image: url('assets/bayna-white-logo.png');
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(37, 99, 235, 0.85);
+            z-index: 1;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .header h1 {
+            color: white;
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+        
+        .effective-date {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+        
+        .last-updated {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 13px;
+        }
+        
+        .content {
+            padding: 40px 32px;
+        }
+        
+        .section {
+            margin-bottom: 32px;
+        }
+        
+        .section-title {
+            color: #2563EB;
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #E5E7EB;
+        }
+        
+        .subsection-title {
+            color: #374151;
+            font-size: 18px;
+            font-weight: 600;
+            margin-top: 20px;
+            margin-bottom: 12px;
+        }
+        
+        p {
+            color: #4B5563;
+            margin-bottom: 16px;
+            line-height: 1.7;
+        }
+        
+        .highlight {
+            background: #EFF6FF;
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid #2563EB;
+            margin: 20px 0;
+        }
+        
+        .highlight p {
+            margin-bottom: 0;
+        }
+        
+        .warning {
+            background: #FEF3C7;
+            padding: 16px;
+            border-radius: 12px;
+            border-left: 4px solid #F59E0B;
+            margin: 20px 0;
+        }
+        
+        .warning p {
+            margin-bottom: 0;
+            color: #92400E;
+        }
+        
+        .info-box {
+            background: #F0FDF4;
+            padding: 16px;
+            border-radius: 12px;
+            border-left: 4px solid #10B981;
+            margin: 20px 0;
+        }
+        
+        .info-box p {
+            margin-bottom: 0;
+            color: #065F46;
+        }
+        
+        ul, ol {
+            margin: 16px 0;
+            padding-left: 24px;
+        }
+        
+        li {
+            color: #4B5563;
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+        
+        .badge {
+            display: inline-block;
+            background: #F59E0B;
+            color: white;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin-bottom: 16px;
+        }
+        
+        .footer {
+            background: #F9FAFB;
+            padding: 24px 32px;
+            text-align: center;
+            border-top: 1px solid #E5E7EB;
+        }
+        
+        .footer p {
+            font-size: 14px;
+            color: #6B7280;
+            margin-bottom: 8px;
+        }
+        
+        .contact-link {
+            color: #2563EB;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .contact-link:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 12px;
+            }
+            
+            .header {
+                padding: 32px 20px;
+            }
+            
+            .header h1 {
+                font-size: 28px;
+            }
+            
+            .content {
+                padding: 24px 20px;
+            }
+            
+            .section-title {
+                font-size: 20px;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Vendor Merchant Agreement</h1>
-
-        <h2>1. Onboarding & Verification</h2>
-        <p>To list on Bayna, you must provide valid identification and business details for verification[cite: 1].</p>
-
-        <h2>2. Pricing Transparency</h2>
-        <p>Vendors agree to list the total price of goods or services[cite: 1]. The use of "Price in DM" tactics is prohibited and may result in account suspension[cite: 1].</p>
-
-        <h2>3. Payments & Payouts</h2>
-        <p>Payments made through the app will be settled via Mobile Money (Orange Money/Africell Money)[cite: 1]. Payouts are typically processed within 24-48 hours of a confirmed transaction[cite: 1].</p>
-
-        <h2>4. Commissions</h2>
-        <p>Bayna reserves the right to charge commission or subscription fees as outlined in your specific vendor tier[cite: 1].</p>
+        <div class="header">
+            <div class="header-content">
+                <h1>Vendor Merchant Agreement</h1>
+                
+            </div>
+        </div>
+        
+        <div class="content">
+            <div class="section">
+                <div class="badge">For Sellers & Service Providers</div>
+                <p><b>Welcome to Bayna.</b></p>
+                <p>This Vendor Merchant Agreement ("Agreement") is a legally binding contract between you ("Vendor", "Seller", "Service Provider", "you", "your") and Bayna ("Company", "we", "us", "our") governing your participation as a vendor on the Bayna marketplace platform. By registering as a vendor or service provider, you agree to comply with all terms set forth in this Agreement.</p>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">1. Onboarding & Verification</h2>
+                <p>To list products or services on Bayna, you must complete our verification process. This process is designed to maintain trust and safety within our marketplace community.</p>
+                
+                <p><strong>Verification Requirements:</strong></p>
+                <ul>
+                    <li>Valid government-issued identification (National ID, Driver's License, or Passport)</li>
+                    <li>Business registration documents (for formal businesses)</li>
+                    <li>Business address and contact information</li>
+                    <li>Bank account or Mobile Money details for payouts</li>
+                    <li>Product or service category verification</li>
+                </ul>
+                
+                <div class="info-box">
+                    <p><strong>Verification Timeline:</strong> Standard verification typically takes 1-3 business days. Expedited verification may be available for qualified businesses.</p>
+                </div>
+                
+                <p>Bayna reserves the right to reject verification applications or suspend verified status for vendors who fail to maintain compliance with this Agreement.</p>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">2. Pricing Transparency</h2>
+                <div class="warning">
+                    <p><strong>Prohibited Practice:</strong> The use of "Price in DM" (Direct Message) tactics is strictly prohibited and will result in immediate account suspension or termination.</p>
+                </div>
+                
+                <p>Vendors agree to list the total, all-inclusive price of goods or services directly on their product or service listings. Price transparency requirements include:</p>
+                <ul>
+                    <li>Displaying the full price upfront, including all fees and charges</li>
+                    <li>No hidden costs or unexpected fees at checkout</li>
+                    <li>Clear indication of any discounts or promotional pricing</li>
+                    <li>Accurate pricing for all product variations (sizes, colors, quantities)</li>
+                    <li>Immediate price updates when changes occur</li>
+                </ul>
+                
+                <div class="highlight">
+                    <p><strong>Why This Matters:</strong> Price transparency builds trust with customers and ensures a fair marketplace for all vendors. Violations of this policy damage the integrity of the platform.</p>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">3. Payments & Payouts</h2>
+                <p><strong>Payment Processing:</strong> Payments made through the Bayna platform are processed via secure payment gateways including:</p>
+                <ul>
+                    <li>Orange Money</li>
+                    <li>Africell Money</li>
+                    <li>Other approved Mobile Money providers</li>
+                    <li>Bank transfers (where available)</li>
+                </ul>
+                
+                <p><strong>Payout Schedule:</strong> Payouts to vendors are processed according to the following schedule:</p>
+                <ul>
+                    <li><strong>Standard Payout:</strong> Within 24-48 hours of confirmed transaction completion</li>
+                    <li><strong>Express Payout:</strong> Available for verified vendors (additional fees may apply)</li>
+                    <li><strong>Holding Period:</strong> First-time vendors may have an initial 7-day holding period</li>
+                </ul>
+                
+                <div class="info-box">
+                    <p><strong>Payment Disputes:</strong> In the event of a customer dispute, funds may be held until the dispute is resolved. Both parties will be notified of any holds or adjustments.</p>
+                </div>
+                
+                <p><strong>Minimum Payout Amount:</strong> The minimum payout amount is 50,000 SLL. Funds below this threshold will roll over to the next payout cycle.</p>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">4. Commissions & Fees</h2>
+                <p>Bayna reserves the right to charge commissions or subscription fees as outlined in your specific vendor tier. Current fee structures include:</p>
+                
+                <p><strong>Commission-Based Model:</strong></p>
+                <ul>
+                    <li><strong>Products:</strong> 10% commission on each successful sale</li>
+                    <li><strong>Services:</strong> 12% commission on each completed booking</li>
+                    <li><strong>Premium Listings:</strong> Optional fee for featured placement (starting at 20,000 SLL/month)</li>
+                </ul>
+                
+                <p><strong>Subscription-Based Model (Coming Soon):</strong></p>
+                <ul>
+                    <li><strong>Basic Tier:</strong> Free (10% commission)</li>
+                    <li><strong>Pro Tier:</strong> 50,000 SLL/month (5% commission)</li>
+                    <li><strong>Enterprise Tier:</strong> Custom pricing (negotiable commission rates)</li>
+                </ul>
+                
+                <div class="warning">
+                    <p><strong>Fee Changes:</strong> Bayna may adjust commission rates or fee structures with 30 days' notice. Continued use of the platform after fee changes constitutes acceptance of the new rates.</p>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">5. Vendor Performance Standards</h2>
+                <p>To maintain a high-quality marketplace, vendors must meet the following performance standards:</p>
+                <ul>
+                    <li><strong>Response Rate:</strong> ≥ 90% response to customer inquiries within 24 hours</li>
+                    <li><strong>Fulfillment Rate:</strong> ≥ 95% of orders fulfilled on time</li>
+                    <li><strong>Customer Rating:</strong> Maintain average rating of 4.0 stars or higher</li>
+                    <li><strong>Dispute Rate:</strong> Less than 5% of transactions resulting in disputes</li>
+                </ul>
+                
+                <p>Vendors failing to meet these standards may be subject to:</p>
+                <ul>
+                    <li>Account review and warning</li>
+                    <li>Temporary suspension</li>
+                    <li>Permanent removal from the platform</li>
+                    <li>Forfeiture of pending payouts (in cases of fraud)</li>
+                </ul>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">6. Product and Service Quality</h2>
+                <p>Vendors are responsible for ensuring all products and services listed on Bayna meet the following quality standards:</p>
+                <ul>
+                    <li>Products must be genuine, authentic, and as described</li>
+                    <li>Services must be performed professionally and to customer satisfaction</li>
+                    <li>All listings must include accurate, high-quality images</li>
+                    <li>Prohibited items include counterfeit goods, illegal substances, weapons, and hazardous materials</li>
+                    <li>Services must comply with all applicable professional standards and regulations</li>
+                </ul>
+                
+                <div class="highlight">
+                    <p><strong>Quality Guarantee:</strong> Bayna may remove listings that receive repeated negative feedback or fail to meet quality standards. Repeat offenders will have their vendor status revoked.</p>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">7. Customer Communication</h2>
+                <p>Vendors must maintain professional and respectful communication with customers at all times. Guidelines include:</p>
+                <ul>
+                    <li>Respond to inquiries within 24 hours</li>
+                    <li>Provide accurate and helpful information</li>
+                    <li>Do not harass, intimidate, or abuse customers</li>
+                    <li>Do not solicit customers to complete transactions outside the platform</li>
+                    <li>Honor all commitments and promises made to customers</li>
+                </ul>
+                
+                <div class="warning">
+                    <p><strong>Off-Platform Transactions:</strong> Soliciting customers to complete transactions outside Bayna is strictly prohibited and will result in immediate account termination.</p>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">8. Prohibited Activities</h2>
+                <p>Vendors shall not engage in the following prohibited activities:</p>
+                <ul>
+                    <li>Listing counterfeit, stolen, or illegal items</li>
+                    <li>Creating fake accounts to manipulate ratings or reviews</li>
+                    <li>Price fixing or collusion with other vendors</li>
+                    <li>Money laundering or fraudulent transactions</li>
+                    <li>Violating intellectual property rights of others</li>
+                    <li>Posting misleading or deceptive content</li>
+                    <li>Attempting to access other vendor accounts</li>
+                </ul>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">9. Intellectual Property</h2>
+                <p>Vendors retain ownership of their product images, descriptions, and branding. However, by listing on Bayna, you grant us a non-exclusive, royalty-free license to display your content on the platform.</p>
+                <p>Vendors must not use Bayna's trademarks, logos, or branding without explicit written permission.</p>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">10. Termination of Vendor Status</h2>
+                <p><strong>Voluntary Termination:</strong> Vendors may terminate this Agreement at any time by closing their vendor account. All pending orders must be fulfilled before closure.</p>
+                
+                <p><strong>Involuntary Termination:</strong> Bayna may terminate vendor status immediately for:</p>
+                <ul>
+                    <li>Violation of this Agreement or platform policies</li>
+                    <li>Fraudulent or illegal activities</li>
+                    <li>Repeated poor performance or negative customer feedback</li>
+                    <li>Abuse of customers or other vendors</li>
+                    <li>Any conduct harmful to the platform or community</li>
+                </ul>
+                
+                <div class="info-box">
+                    <p><strong>Appeals Process:</strong> Terminated vendors may appeal the decision by contacting vendors@bayna.com within 14 days of termination.</p>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">11. Dispute Resolution</h2>
+                <p>Customer disputes will be handled through Bayna's dispute resolution process. Vendors agree to cooperate fully with investigations. Steps include:</p>
+                <ul>
+                    <li>Customer submits dispute with supporting evidence</li>
+                    <li>Vendor is notified and given 48 hours to respond</li>
+                    <li>Bayna reviews evidence from both parties</li>
+                    <li>Decision is rendered within 5-7 business days</li>
+                    <li>Either party may appeal the decision</li>
+                </ul>
+                <p>If a dispute cannot be resolved through this process, either party may seek resolution through the courts of Sierra Leone.</p>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">12. Liability and Insurance</h2>
+                <p>Vendors are solely responsible for their products, services, and business operations. Bayna is not liable for any damages arising from vendor-customer transactions, including but not limited to:</p>
+                <ul>
+                    <li>Product defects or service failures</li>
+                    <li>Delivery delays or failures</li>
+                    <li>Customer injuries or property damage</li>
+                    <li>Loss of profits or business opportunities</li>
+                </ul>
+                <p>Vendors are strongly encouraged to obtain appropriate business insurance, including liability insurance, to protect against potential claims.</p>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">13. Modifications to Agreement</h2>
+                <p>Bayna may modify this Agreement with 30 days' written notice (email or in-app notification). Continued operation as a vendor after changes constitutes acceptance of the modified terms. Vendors may terminate this Agreement if they disagree with modifications.</p>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">14. Governing Law</h2>
+                <p>This Agreement shall be governed by and construed in accordance with the laws of Sierra Leone. Any legal proceedings must be filed in the courts of Freetown, Sierra Leone.</p>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">15. Entire Agreement</h2>
+                <p>This Agreement, together with the Bayna Terms of Service and Privacy Policy, constitutes the entire agreement between you and Bayna regarding your vendor status, superseding any prior agreements or understandings.</p>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">16. Contact Information</h2>
+                <p>For questions about this Vendor Agreement, please contact:</p>
+                <ul>
+                    <li><strong>Bayna Vendor Support</strong></li>
+                    <li>Email: <a href="mailto:vendors@bayna.com" class="contact-link">vendors@bayna.com</a></li>
+                    <li>Support Email: <a href="mailto:support@bayna.com" class="contact-link">support@bayna.com</a></li>
+                    <li>Phone: <a href="tel:+23277028023" class="contact-link">+232 77 028 023</a></li>
+                    <li>Location: Freetown, Sierra Leone</li>
+                </ul>
+            </div>
+        </div>
+        
+       
     </div>
 </body>
 </html>

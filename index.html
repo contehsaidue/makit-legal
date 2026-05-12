@@ -2,50 +2,382 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Privacy Policy - Bayna</title>
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 40px 20px; background-color: #f9f9f9; }
-        .container { background: white; padding: 40px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
-        h1 { color: #1a1a1a; border-bottom: 2px solid #007AFF; padding-bottom: 10px; }
-        h2 { color: #007AFF; margin-top: 30px; }
-        .last-updated { color: #666; font-style: italic; }
-        footer { margin-top: 50px; text-align: center; color: #999; font-size: 0.8em; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #1a202c;
+            background: #f7fafc;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            position: relative;
+            padding: 40px 32px;
+            text-align: center;
+            background-image: url('assets/bayna-white-logo.png');
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(37, 99, 235, 0.85);
+            z-index: 1;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .header h1 {
+            color: white;
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+        
+        .effective-date {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+        
+        .last-updated {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 13px;
+        }
+        
+        .content {
+            padding: 40px 32px;
+        }
+        
+        .section {
+            margin-bottom: 32px;
+        }
+        
+        .section-title {
+            color: #2563EB;
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #E5E7EB;
+        }
+        
+        p {
+            color: #4B5563;
+            margin-bottom: 16px;
+            line-height: 1.7;
+        }
+        
+        .highlight {
+            background: #EFF6FF;
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid #2563EB;
+            margin: 20px 0;
+        }
+        
+        .highlight p {
+            margin-bottom: 0;
+        }
+        
+        .warning {
+            background: #FEF3C7;
+            padding: 16px;
+            border-radius: 12px;
+            border-left: 4px solid #F59E0B;
+            margin: 20px 0;
+        }
+        
+        .warning p {
+            margin-bottom: 0;
+            color: #92400E;
+        }
+        
+        ul, ol {
+            margin: 16px 0;
+            padding-left: 24px;
+        }
+        
+        li {
+            color: #4B5563;
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+        
+        .info-box {
+            background: #F0FDF4;
+            padding: 16px;
+            border-radius: 12px;
+            border-left: 4px solid #10B981;
+            margin: 20px 0;
+        }
+        
+        .info-box p {
+            margin-bottom: 0;
+            color: #065F46;
+        }
+        
+        .footer {
+            background: #F9FAFB;
+            padding: 24px 32px;
+            text-align: center;
+            border-top: 1px solid #E5E7EB;
+        }
+        
+        .footer p {
+            font-size: 14px;
+            color: #6B7280;
+            margin-bottom: 8px;
+        }
+        
+        .contact-link {
+            color: #2563EB;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .contact-link:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 12px;
+            }
+            
+            .header {
+                padding: 32px 20px;
+            }
+            
+            .header h1 {
+                font-size: 28px;
+            }
+            
+            .content {
+                padding: 24px 20px;
+            }
+            
+            .section-title {
+                font-size: 20px;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Privacy Policy</h1>
-        <p class="last-updated">Last Updated: May 12, 2026</p>
-        <p>Welcome to Bayna. We are committed to protecting your personal information and your right to privacy. This policy applies to all information collected through our mobile application and related services.</p>
+        <div class="header">
+            <div class="header-content">
+                <h1>Privacy Policy</h1>
+              
+            </div>
+        </div>
         
-        <h2>1. Information We Collect</h2>
-        <p>We collect personal information that you provide to us, including:</p>
-        <ul>
-            <li><strong>Personal Identifiers:</strong> Name, phone number, and email address[cite: 1].</li>
-            <li><strong>Vendor Data:</strong> Business location, registration details for verification, and product/service images[cite: 1].</li>
-            <li><strong>Location Data:</strong> Access to your location to help you find nearby services and vendors[cite: 1].</li>
-            <li><strong>Device Data:</strong> Device ID and operating system version[cite: 1].</li>
-        </ul>
-
-        <h2>2. How We Use Your Information</h2>
-        <p>We use your information to operate and maintain our marketplace, including[cite: 1]:</p>
-        <ul>
-            <li>Verifying vendor identities to maintain trust[cite: 1].</li>
-            <li>Facilitating connections between buyers and service providers[cite: 1].</li>
-            <li>Processing payments through third-party providers such as Orange Money or Africell Money[cite: 1].</li>
-            <li>Sending service updates and security alerts[cite: 1].</li>
-        </ul>
-
-        <h2>3. Data Deletion Rights (Mandatory)</h2>
-        <p>In accordance with global app store requirements, we provide all users the right to delete their account and all associated data[cite: 1]. You can request deletion directly within the app via <strong>Settings > Account > Delete Account</strong> or by emailing <strong>support@bayna.sl</strong>[cite: 1]. Your data will be purged from our PostgreSQL databases within 72 hours of the request[cite: 1].</p>
-
-        <h2>4. Data Security</h2>
-        <p>We implement industry-standard security measures, including HTTPS encryption and secure database protocols[cite: 1].</p>
-
-        <h2>5. Contact Us</h2>
-        <p>For questions regarding this policy, please contact us at support@bayna.sl[cite: 1].</p>
+        <div class="content">
+            <div class="section">
+                <p><b>Welcome to Bayna.</b></p>
+                <p>We are committed to protecting your personal information and your right to privacy. This Privacy Policy applies to all information collected through our mobile application, website, and related services ("Services"). By using Bayna, you agree to the collection and use of information in accordance with this policy.</p>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">1. Information We Collect</h2>
+                <p>We collect personal information that you voluntarily provide to us when registering for an account, expressing interest in our services, or participating in activities on the platform.</p>
+                
+                <p><strong>Personal Identifiers:</strong></p>
+                <ul>
+                    <li>Full name</li>
+                    <li>Phone number</li>
+                    <li>Email address</li>
+                    <li>Profile photo (optional)</li>
+                    <li>Physical address (for deliveries)</li>
+                </ul>
+                
+                <p><strong>Vendor and Service Provider Data:</strong></p>
+                <ul>
+                    <li>Business name and registration details</li>
+                    <li>Business location and contact information</li>
+                    <li>Product listings and service descriptions</li>
+                    <li>Product and service images</li>
+                    <li>Verification documents (for trusted vendors)</li>
+                </ul>
+                
+                <p><strong>Device and Usage Data:</strong></p>
+                <ul>
+                    <li>Device ID and operating system version</li>
+                    <li>IP address and network information</li>
+                    <li>App usage statistics and interaction data</li>
+                    <li>Crash reports and performance data</li>
+                </ul>
+                
+                <p><strong>Location Data:</strong></p>
+                <ul>
+                    <li>Precise or approximate location data (with your consent)</li>
+                    <li>Used to help you find nearby services and vendors</li>
+                    <li>You can disable location access in your device settings</li>
+                </ul>
+                
+                <div class="highlight">
+                    <p><strong>Important:</strong> We do not collect sensitive personal data such as government IDs, financial account numbers, or biometric data unless explicitly authorized by you and required for specific services.</p>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">2. How We Use Your Information</h2>
+                <p>We use your information to operate, maintain, and improve our marketplace platform. Specific uses include:</p>
+                <ul>
+                    <li><strong>Account Management:</strong> Creating and managing your user account</li>
+                    <li><strong>Verification:</strong> Verifying vendor and service provider identities to maintain trust and safety</li>
+                    <li><strong>Transaction Facilitation:</strong> Connecting buyers with sellers and customers with service providers</li>
+                    <li><strong>Payment Processing:</strong> Processing payments through third-party providers such as Orange Money, Africell Money, and other payment partners</li>
+                    <li><strong>Communication:</strong> Sending service updates, order confirmations, booking reminders, and security alerts</li>
+                    <li><strong>Personalization:</strong> Customizing your experience and showing relevant recommendations</li>
+                    <li><strong>Analytics:</strong> Analyzing usage patterns to improve our services</li>
+                    <li><strong>Legal Compliance:</strong> Complying with applicable laws and regulations in Sierra Leone</li>
+                </ul>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">3. Data Deletion Rights</h2>
+                <div class="info-box">
+                    <p><strong>Your Right to Delete:</strong> In accordance with app store requirements and global privacy standards, we provide all users the right to delete their account and all associated data.</p>
+                </div>
+                
+                <p>You can request deletion of your account and personal data through the following methods:</p>
+                <ul>
+                    <li><strong>In-App:</strong> Go to <strong>Settings → Account → Delete Account</strong></li>
+                    <li><strong>Email Request:</strong> Send a deletion request to <a href="mailto:support@bayna.com" class="contact-link">support@bayna.com</a></li>
+                </ul>
+                
+                <div class="warning">
+                    <p><strong>Processing Time:</strong> Your data will be purged from our PostgreSQL databases within 72 hours of the request. Some anonymized data may be retained for legal or analytical purposes.</p>
+                </div>
+                
+                <p><strong>Data Retention Period:</strong></p>
+                <ul>
+                    <li>Active accounts: Data retained for the duration of account activity</li>
+                    <li>Deleted accounts: Data purged within 72 hours</li>
+                    <li>Transactional data: Retained for 5 years for legal and accounting purposes (anonymized)</li>
+                </ul>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">4. Data Sharing and Disclosure</h2>
+                <p>We may share your information in the following circumstances:</p>
+                <ul>
+                    <li><strong>With Your Consent:</strong> We may share information when you give us explicit permission</li>
+                    <li><strong>Service Providers:</strong> With third-party vendors who help us operate our platform (payment processors, hosting services, analytics providers)</li>
+                    <li><strong>Legal Requirements:</strong> When required by law or to respond to legal process</li>
+                    <li><strong>Business Transfers:</strong> In connection with a merger, acquisition, or sale of assets</li>
+                </ul>
+                
+                <div class="highlight">
+                    <p><strong>Important:</strong> We do not sell your personal information to third parties for marketing purposes.</p>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">5. Data Security</h2>
+                <p>We implement industry-standard security measures to protect your information:</p>
+                <ul>
+                    <li><strong>Encryption:</strong> HTTPS encryption for all data transmission</li>
+                    <li><strong>Secure Storage:</strong> Encrypted database storage with access controls</li>
+                    <li><strong>Authentication:</strong> Secure authentication protocols for user accounts</li>
+                    <li><strong>Regular Audits:</strong> Periodic security assessments and vulnerability scans</li>
+                    <li><strong>Access Control:</strong> Strict internal access controls for employee data access</li>
+                </ul>
+                
+                <p>While we strive to protect your information, no method of transmission over the internet or electronic storage is 100% secure. We cannot guarantee absolute security.</p>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">6. Your Privacy Rights</h2>
+                <p>Depending on your location, you may have the following rights regarding your personal information:</p>
+                <ul>
+                    <li><strong>Access:</strong> Request a copy of your personal data</li>
+                    <li><strong>Correction:</strong> Request correction of inaccurate information</li>
+                    <li><strong>Deletion:</strong> Request deletion of your personal data</li>
+                    <li><strong>Restriction:</strong> Request restriction of processing</li>
+                    <li><strong>Portability:</strong> Request transfer of your data to another service</li>
+                    <li><strong>Objection:</strong> Object to certain data processing activities</li>
+                </ul>
+                
+                <p>To exercise these rights, contact us at <a href="mailto:privacy@bayna.com" class="contact-link">privacy@bayna.com</a>.</p>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">7. Children's Privacy</h2>
+                <p>Bayna is not intended for children under 13 years of age. We do not knowingly collect personal information from children under 13. If you believe a child has provided us with personal information, please contact us immediately.</p>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">8. Third-Party Services</h2>
+                <p>Our app may contain links to third-party websites or services. We are not responsible for the privacy practices of these third parties. We encourage you to review their privacy policies before providing any information.</p>
+                <p>Third-party services integrated with Bayna include:</p>
+                <ul>
+                    <li>Payment processors (Orange Money, Africell Money)</li>
+                    <li>Cloud hosting providers</li>
+                    <li>Analytics services</li>
+                    <li>Push notification services</li>
+                </ul>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">9. International Data Transfers</h2>
+                <p>Your information may be transferred to and processed in countries other than Sierra Leone. We take appropriate safeguards to ensure your data remains protected in accordance with this Privacy Policy.</p>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">10. Updates to This Policy</h2>
+                <p>We may update this Privacy Policy from time to time. We will notify you of any material changes by:</p>
+                <ul>
+                    <li>Posting the new policy on this page</li>
+                    <li>Sending a notification through the app</li>
+                    <li>Sending an email to registered users</li>
+                </ul>
+                <p>The "Last Updated" date at the top of this page indicates when the policy was last revised. Continued use of Bayna after changes constitutes acceptance of the updated policy.</p>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">11. Contact Us</h2>
+                <p>If you have any questions about this Privacy Policy or our data practices, please contact us:</p>
+                <ul>
+                    <li><strong>Bayna Privacy Team</strong></li>
+                    <li>Email: <a href="mailto:privacy@bayna.com" class="contact-link">privacy@bayna.com</a></li>
+                    <li>Support Email: <a href="mailto:support@bayna.com" class="contact-link">support@bayna.com</a></li>
+                    <li>Phone: <a href="tel:+23277028023" class="contact-link">+232 77 028 023</a></li>
+                    <li>Location: Freetown, Sierra Leone</li>
+                </ul>
+            </div>
+        </div>
+        
+      
     </div>
-    <footer>&copy; 2026 Bayna Sierra Leone</footer>
 </body>
 </html>
