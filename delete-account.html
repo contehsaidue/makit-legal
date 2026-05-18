@@ -1,0 +1,431 @@
+Here is the complete HTML document that creates a "Delete Account" instructions page, following your specific app navigation steps and using a style consistent with your provided Terms of Service template.
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Delete Account - Salone Marketplace</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #1a202c;
+            background: #f7fafc;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            position: relative;
+            padding: 40px 32px;
+            text-align: center;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.1);
+            z-index: 1;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .salone-logo {
+            width: 80px;
+            height: auto;
+            margin-bottom: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            background: white;
+            border-radius: 50%;
+            padding: 8px;
+        }
+        
+        .header h1 {
+            color: white;
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+        
+        .effective-date {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+        
+        .last-updated {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 13px;
+        }
+        
+        .content {
+            padding: 40px 32px;
+        }
+        
+        .section {
+            margin-bottom: 32px;
+        }
+        
+        .section-title {
+            color: #2563EB;
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #E5E7EB;
+        }
+        
+        .subsection-title {
+            color: #374151;
+            font-size: 18px;
+            font-weight: 600;
+            margin-top: 20px;
+            margin-bottom: 12px;
+        }
+        
+        p {
+            color: #4B5563;
+            margin-bottom: 16px;
+            line-height: 1.7;
+        }
+        
+        .highlight {
+            background: #EFF6FF;
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid #2563EB;
+            margin: 20px 0;
+        }
+        
+        .highlight p {
+            margin-bottom: 0;
+        }
+        
+        .warning {
+            background: #FEF3C7;
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid #F59E0B;
+            margin: 20px 0;
+        }
+        
+        .warning p {
+            margin-bottom: 0;
+            color: #92400E;
+        }
+        
+        .danger-zone {
+            background: #FEF2F2;
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid #DC2626;
+            margin: 20px 0;
+        }
+        
+        .danger-zone p {
+            color: #991B1B;
+        }
+        
+        ul, ol {
+            margin: 16px 0;
+            padding-left: 24px;
+        }
+        
+        li {
+            color: #4B5563;
+            margin-bottom: 12px;
+            line-height: 1.6;
+        }
+        
+        .step-number {
+            display: inline-block;
+            background: #2563EB;
+            color: white;
+            font-weight: bold;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 28px;
+            font-size: 14px;
+            margin-right: 12px;
+        }
+        
+        .step-text {
+            font-weight: 600;
+            color: #1E293B;
+        }
+        
+        .instruction-step {
+            margin-bottom: 20px;
+            padding: 12px;
+            background: #F8FAFC;
+            border-radius: 12px;
+        }
+        
+        .badge {
+            background: #E2E8F0;
+            color: #1E293B;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 8px;
+        }
+        
+        .footer {
+            background: #F9FAFB;
+            padding: 24px 32px;
+            text-align: center;
+            border-top: 1px solid #E5E7EB;
+        }
+        
+        .footer p {
+            font-size: 14px;
+            color: #6B7280;
+            margin-bottom: 8px;
+        }
+        
+        .contact-link {
+            color: #2563EB;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .contact-link:hover {
+            text-decoration: underline;
+        }
+        
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        .data-table th, .data-table td {
+            border: 1px solid #E5E7EB;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        .data-table th {
+            background: #F3F4F6;
+            font-weight: 600;
+            color: #1F2937;
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 12px;
+            }
+            
+            .header {
+                padding: 32px 20px;
+            }
+            
+            .header h1 {
+                font-size: 28px;
+            }
+            
+            .content {
+                padding: 24px 20px;
+            }
+            
+            .section-title {
+                font-size: 20px;
+            }
+            
+            .data-table th, .data-table td {
+                padding: 8px;
+                font-size: 13px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-content">
+                <h1>Delete Your Account</h1>
+                
+            </div>
+        </div>
+        
+        <div class="content">
+            <div class="section">
+                <p><strong>Bayna</strong> (the "App") is committed to giving you control over your personal data. This page provides detailed instructions on how to permanently delete your account and associated information directly from the mobile application.</p>
+                
+                <div class="warning">
+                    <p><strong>⚠️ Important:</strong> Account deletion is permanent and irreversible. All your personal data, listings, reviews, and transaction records (except those required by law) will be removed within 30 days. Please ensure you withdraw any pending funds or complete active orders before proceeding.</p>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">Step-by-Step Account Deletion Guide</h2>
+                <p>Follow the steps below to permanently delete your Salone Marketplace account. The process includes multiple confirmation screens to prevent accidental deletion.</p>
+                
+                <div class="instruction-step">
+                    <span class="badge">STEP 1</span>
+                    <div><span class="step-number">1</span> <span class="step-text">Open the Salone Marketplace App</span></div>
+                    <p style="margin-top: 8px; margin-bottom: 0;">Launch the app on your mobile device and ensure you are logged in to the account you wish to delete.</p>
+                </div>
+                
+                <div class="instruction-step">
+                    <span class="badge">STEP 2</span>
+                    <div><span class="step-number">2</span> <span class="step-text">Tap the Hamburger / Drawer Menu</span></div>
+                    <p style="margin-top: 8px; margin-bottom: 0;">Tap the <strong>☰ (hamburger menu)</strong> icon located at the <strong>top left corner</strong> of the home screen. This will open the navigation drawer.</p>
+                    <div class="highlight" style="margin-top: 10px; padding: 10px;">
+                        <p style="font-size: 14px;">📱 <strong>Visual clue:</strong> The menu icon looks like three horizontal lines stacked vertically.</p>
+                    </div>
+                </div>
+                
+                <div class="instruction-step">
+                    <span class="badge">STEP 3</span>
+                    <div><span class="step-number">3</span> <span class="step-text">Tap "Profile" at the Bottom Left</span></div>
+                    <p style="margin-top: 8px; margin-bottom: 0;">In the open drawer menu, scroll to the <strong>bottom left section</strong> and tap on <strong>"Profile"</strong> or your avatar icon to access your personal profile page.</p>
+                </div>
+                
+                <div class="instruction-step">
+                    <span class="badge">STEP 4</span>
+                    <div><span class="step-number">4</span> <span class="step-text">Enter Account Settings</span></div>
+                    <p style="margin-top: 8px; margin-bottom: 0;">On your profile screen, look for the <strong>"Account Settings"</strong> option (usually represented by a gear ⚙️ icon or labeled text). Tap to proceed.</p>
+                </div>
+                
+                <div class="instruction-step">
+                    <span class="badge">STEP 5</span>
+                    <div><span class="step-number">5</span> <span class="step-text">Navigate to Danger Zone</span></div>
+                    <p style="margin-top: 8px; margin-bottom: 0;">Scroll down within Account Settings until you find a red-bordered or highlighted section labeled <strong>"Danger Zone"</strong>. Inside, tap <strong>"Delete Account"</strong>.</p>
+                    <div class="danger-zone" style="margin-top: 10px;">
+                        <p>⚠️ The Danger Zone contains sensitive actions. Only proceed if you are certain about deleting your account.</p>
+                    </div>
+                </div>
+                
+                <div class="instruction-step">
+                    <span class="badge">STEP 6</span>
+                    <div><span class="step-number">6</span> <span class="step-text">Proceed to Delete Account Page</span></div>
+                    <p style="margin-top: 8px; margin-bottom: 0;">You will be redirected to the <strong>Delete Account page</strong>. On this page, you will see a detailed warning explaining the consequences of deletion.</p>
+                    <p>Tap the <strong>"Proceed to Delete"</strong> button to continue.</p>
+                </div>
+                
+                <div class="instruction-step">
+                    <span class="badge">STEP 7</span>
+                    <div><span class="step-number">7</span> <span class="step-text">Confirmation Screen & Identity Verification</span></div>
+                    <p style="margin-top: 8px; margin-bottom: 0;">A final <strong>Delete Confirmation Screen</strong> will appear. You must complete all three fields to enable the deletion button:</p>
+                    <ul style="margin-top: 8px;">
+                        <li><strong>Enter your password</strong> – To verify it's really you.</li>
+                        <li><strong>Reason for deletion (optional)</strong> – You may optionally provide feedback to help us improve.</li>
+                        <li><strong>Type "DELETE"</strong> – In the text box, you must type the word <strong>DELETE</strong> in uppercase letters exactly as shown.</li>
+                    </ul>
+                    <p>Once you have entered your password, typed "DELETE", and optionally provided a reason, the <strong>"Permanently Delete Account"</strong> button will become active (enabled).</p>
+                </div>
+                
+                <div class="instruction-step">
+                    <span class="badge">STEP 8</span>
+                    <div><span class="step-number">8</span> <span class="step-text">Final Action</span></div>
+                    <p style="margin-top: 8px; margin-bottom: 0;">Tap the <strong>"Permanently Delete Account"</strong> button. A final pop-up will ask for one last confirmation. Confirm to permanently delete your account and all associated data.</p>
+                </div>
+                
+                <div class="highlight">
+                    <p><strong>✅ After deletion:</strong> You will be automatically logged out. Your account will be queued for permanent deletion within 30 days. You will no longer be able to log in or access past orders, messages, or listings using the deleted account credentials.</p>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">What Data Is Deleted</h2>
+                <p>When you permanently delete your account, the following types of data are removed from our active systems:</p>
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Data Category</th><th>Action on Deletion</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Profile information (name, email, phone)</td><td>✅ Permanently deleted</td></tr>
+                        <tr><td>Saved addresses & delivery locations</td><td>✅ Permanently deleted</td></tr>
+                        <tr><td>Saved payment methods</td><td>✅ Permanently deleted</td></tr>
+                        <tr><td>Messages & conversations</td><td>✅ Permanently deleted</td></tr>
+                        <tr><td>Product & service reviews</td><td>✅ Anonymized (cannot be traced to you)</td></tr>
+                        <tr><td>Wishlist & bookmarked items</td><td>✅ Permanently deleted</td></tr>
+                        <tr><td>Notifications & preferences</td><td>✅ Permanently deleted</td></tr>
+                        <tr><td>Seller/service provider listings</td><td>✅ Permanently deleted</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">Data Retention After Deletion</h2>
+                <p>In compliance with legal and regulatory requirements of Sierra Leone and other applicable jurisdictions, certain data may be retained for specific periods:</p>
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Retained Data Type</th><th>Retention Period</th><th>Reason</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Transaction & order history</td><td>7 years</td><td>Required by Sierra Leone tax and commercial laws</td></tr>
+                        <tr><td>Payment records & receipts</td><td>7 years</td><td>Financial audit & dispute resolution</td></tr>
+                        <tr><td>Anonymized analytics data</td><td>Indefinite</td><td>Platform performance & improvement (non-identifiable)</td></tr>
+                    </tbody>
+                </table>
+                <div class="warning">
+                    <p><strong>📌 Note:</strong> Retained data is stored securely and is never used for marketing or shared with third parties. After the legal retention period ends, even these records are permanently deleted.</p>
+                </div>
+            </div>
+          
+            
+            <div class="section">
+                <h2 class="section-title">Need Help Deleting Your Account?</h2>
+                <p>If you encounter any issues while trying to delete your account, or if you have trouble completing the "DELETE" confirmation step, our support team is here to assist you.</p>
+                <div class="highlight">
+                    <p><strong>📧 Email Support:</strong> <a href="mailto:support@salonemarket.sl" class="contact-link">support@salonemarket.sl</a><br>
+                    <strong>📞 Phone (Sierra Leone):</strong> <a href="tel:+23276123456" class="contact-link">+232 76 123 456</a><br>
+                    <strong>🕒 Response Time:</strong> Within 2 business days<br>
+                    <strong>📍 Location:</strong> Freetown, Sierra Leone</p>
+                </div>
+                <p>When contacting support regarding account deletion, please provide the email address associated with your account so we can verify your identity and process your request securely.</p>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">Important Legal & Compliance Information</h2>
+                <p><strong>App Name:</strong> Bayna<br>
+                <strong>Developer:</strong> Bayna Team (Sierra Leone)<br>
+                <strong>Data Controller:</strong> Bayna Operations</p>
+                <p>This account deletion process complies with:</p>
+                <ul>
+                    <li>Sierra Leone's Data Protection and Privacy Practices</li>
+                    <li>Google Play Developer Program Policies regarding user data deletion</li>
+                    <li>GDPR (for users in the European Union) – Right to erasure</li>
+                    <li>CCPA (for California residents) – Right to delete</li>
+                </ul>
+                <div class="warning">
+                    <p><strong>🔐 Security Note:</strong> To protect your account from unauthorized deletion, we require password verification and the manual entry of "DELETE". This ensures that only the legitimate account owner can permanently remove the account.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+```
