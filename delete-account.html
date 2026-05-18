@@ -1,11 +1,10 @@
-Here is the complete HTML document that creates a "Delete Account" instructions page, following your specific app navigation steps and using a style consistent with your provided Terms of Service template.
-```html
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Delete Account - Salone Marketplace</title>
+    <title>Delete Account - Bayna</title>
     <style>
         * {
             margin: 0;
@@ -31,11 +30,15 @@ Here is the complete HTML document that creates a "Delete Account" instructions 
             overflow: hidden;
         }
         
+        /* Header with background image and overlay (consistent with Terms of Service page) */
         .header {
             position: relative;
             padding: 40px 32px;
             text-align: center;
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            background-image: url('assets/bayna-white-logo.png');
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
         }
         
         .header::before {
@@ -45,7 +48,7 @@ Here is the complete HTML document that creates a "Delete Account" instructions 
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0, 0, 0, 0.1);
+            background: rgba(37, 99, 235, 0.85);
             z-index: 1;
         }
         
@@ -54,7 +57,7 @@ Here is the complete HTML document that creates a "Delete Account" instructions 
             z-index: 2;
         }
         
-        .salone-logo {
+        .bayna-logo {
             width: 80px;
             height: auto;
             margin-bottom: 20px;
@@ -271,6 +274,7 @@ Here is the complete HTML document that creates a "Delete Account" instructions 
 </head>
 <body>
     <div class="container">
+      
         <div class="header">
             <div class="header-content">
                 <h1>Delete Your Account</h1>
@@ -289,11 +293,11 @@ Here is the complete HTML document that creates a "Delete Account" instructions 
             
             <div class="section">
                 <h2 class="section-title">Step-by-Step Account Deletion Guide</h2>
-                <p>Follow the steps below to permanently delete your Salone Marketplace account. The process includes multiple confirmation screens to prevent accidental deletion.</p>
+                <p>Follow the steps below to permanently delete your Bayna account. The process includes multiple confirmation screens to prevent accidental deletion.</p>
                 
                 <div class="instruction-step">
                     <span class="badge">STEP 1</span>
-                    <div><span class="step-number">1</span> <span class="step-text">Open the Salone Marketplace App</span></div>
+                    <div><span class="step-number">1</span> <span class="step-text">Open the Bayna App</span></div>
                     <p style="margin-top: 8px; margin-bottom: 0;">Launch the app on your mobile device and ensure you are logged in to the account you wish to delete.</p>
                 </div>
                 
@@ -394,14 +398,25 @@ Here is the complete HTML document that creates a "Delete Account" instructions 
                     <p><strong>📌 Note:</strong> Retained data is stored securely and is never used for marketing or shared with third parties. After the legal retention period ends, even these records are permanently deleted.</p>
                 </div>
             </div>
-          
+            
+            <div class="section">
+                <h2 class="section-title">Alternative: Request Partial Data Deletion</h2>
+                <p>If you do not wish to delete your entire account but want to remove specific information (such as reviews, saved addresses, or messages), you can do so without deleting your account:</p>
+                <ul>
+                    <li><strong>Delete individual reviews:</strong> Go to your profile → My Reviews → Tap on a review → Select "Delete".</li>
+                    <li><strong>Clear chat history:</strong> Open a conversation → Tap menu (⋮) → "Clear chat history".</li>
+                    <li><strong>Remove saved addresses:</strong> Profile → Addresses → Swipe left or tap delete icon.</li>
+                    <li><strong>Delete payment methods:</strong> Profile → Payment Methods → Select card → Remove.</li>
+                </ul>
+                <p>For any other data deletion requests that are not covered by the options above, please contact our support team.</p>
+            </div>
             
             <div class="section">
                 <h2 class="section-title">Need Help Deleting Your Account?</h2>
                 <p>If you encounter any issues while trying to delete your account, or if you have trouble completing the "DELETE" confirmation step, our support team is here to assist you.</p>
                 <div class="highlight">
-                    <p><strong>📧 Email Support:</strong> <a href="mailto:support@salonemarket.sl" class="contact-link">support@salonemarket.sl</a><br>
-                    <strong>📞 Phone (Sierra Leone):</strong> <a href="tel:+23276123456" class="contact-link">+232 76 123 456</a><br>
+                    <p><strong>📧 Email Support:</strong> <a href="mailto:support@bayna.com" class="contact-link">support@bayna.com</a><br>
+                    <strong>📞 Phone (Sierra Leone):</strong> <a href="tel:+23277028023" class="contact-link">+232 77 028 023</a><br>
                     <strong>🕒 Response Time:</strong> Within 2 business days<br>
                     <strong>📍 Location:</strong> Freetown, Sierra Leone</p>
                 </div>
@@ -425,7 +440,8 @@ Here is the complete HTML document that creates a "Delete Account" instructions 
                 </div>
             </div>
         </div>
+        
+       
     </div>
 </body>
 </html>
-```
