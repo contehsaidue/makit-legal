@@ -363,7 +363,7 @@
                 
                 // Auto redirect to app after 1.5 seconds
                 setTimeout(() => {
-                    window.location.href = `makit://provider/${providerId}`;
+                    window.location.href = `makit://view-providers-portfolio?id=${providerId}`;
                 }, 1500);
                 
             } catch (error) {
@@ -531,7 +531,7 @@
         }
         
         function openApp() {
-            window.location.href = `makit://service-providers/${providerId}`;
+           window.location.href = `makit://view-providers-portfolio?id=${providerId}`;
             
             setTimeout(() => {
                 const fallbackMsg = document.createElement('div');
