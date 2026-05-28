@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    
+    <!-- Open Graph / WhatsApp Preview Tags -->
+    <meta property="og:title" content="Bayna - Store" />
+    <meta property="og:description" content="Shop products on Bayna Marketplace" />
+    <meta property="og:image" content="https://contehsaidue.github.io/makit-legal/assets/bayna-white-logo.png" />
+    <meta property="og:url" content="https://contehsaidue.github.io/makit-legal/seller.html?id=SELLER_ID" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Bayna Marketplace" />
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Bayna Store" />
+    <meta name="twitter:description" content="Shop products in Sierra Leone" />
+    <meta name="twitter:image" content="https://contehsaidue.github.io/makit-legal/assets/bayna-white-logo.png" />
+    
+    <title>Bayna - Store</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: #f7fafc;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 400px;
+            width: 100%;
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            text-align: center;
+        }
+        
+        .cover-container {
+            width: 100%;
+            height: 150px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .cover-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .avatar-container {
+            position: absolute;
+            bottom: -40px;
+            left: 20px;
+            width: 80px;
+            height: 80px;
+            border-radius: 40px;
+            background: white;
+            border: 3px solid white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        .avatar-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .avatar-placeholder {
+            width: 100%;
+            height: 100%;
+            background: #4CAF50;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            font-weight: bold;
+            color: white;
+        }
+        
+        .content {
+            padding: 24px;
+            padding-top: 56px;
+        }
+        
+        .store-name {
+            font-size: 22px;
+            font-weight: 700;
+            color: #1a202c;
+            margin-bottom: 4px;
+            line-height: 1.3;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        
+        .verified-badge {
+            background: #2563EB;
+            color: white;
+            font-size: 11px;
+            padding: 3px 8px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+        
+        .store-category {
+            font-size: 14px;
+            color: #6B7280;
+            margin-bottom: 8px;
+        }
+        
+        .store-location {
+            font-size: 14px;
+            color: #6B7280;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+        }
+        
+        .store-rating {
+            color: #6B7280;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            flex-wrap: wrap;
+        }
+        
+        .star {
+            color: #FFD700;
+            font-size: 18px;
+        }
+        
+        .stats-grid {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+            gap: 12px;
+        }
+        
+        .stat-card {
+            flex: 1;
+            background: #f8f9fa;
+            padding: 12px;
+            border-radius: 12px;
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 18px;
+            font-weight: 700;
+            color: #4CAF50;
+        }
+        
+        .stat-label {
+            font-size: 10px;
+            color: #6B7280;
+            margin-top: 4px;
+        }
+        
+        .description-section {
+            margin-bottom: 20px;
+            padding: 16px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            text-align: left;
+        }
+        
+        .description-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #1a202c;
+            margin-bottom: 8px;
+        }
+        
+        .description-text {
+            font-size: 14px;
+            color: #6B7280;
+            line-height: 1.5;
+        }
+        
+        .products-preview {
+            margin-bottom: 20px;
+            padding: 16px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            text-align: left;
+        }
+        
+        .products-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #1a202c;
+            margin-bottom: 12px;
+        }
+        
+        .product-tag {
+            display: inline-block;
+            background: #E5E7EB;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            color: #4B5563;
+            margin: 4px;
+        }
+        
+        .open-button {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 16px 24px;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 12px;
+            width: 100%;
+            cursor: pointer;
+            margin-bottom: 16px;
+            transition: background 0.3s;
+        }
+        
+        .open-button:hover {
+            background: #45a049;
+        }
+        
+        .download-button {
+            background: #2563EB;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 12px;
+            width: 100%;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .download-button:hover {
+            background: #1D4ED8;
+        }
+        
+        .footer {
+            background: #F9FAFB;
+            padding: 20px;
+            font-size: 12px;
+            color: #6B7280;
+            border-top: 1px solid #E5E7EB;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #6B7280;
+        }
+        
+        .loader {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #4CAF50;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 12px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .error {
+            text-align: center;
+            padding: 40px;
+            color: #EF4444;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="content">
+        <div class="loading">
+            <div class="loader"></div>
+            <div>Loading store details...</div>
+        </div>
+    </div>
+    
+    <script>
+        // Get seller ID from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const sellerId = urlParams.get('id');
+        
+        const API_BASE_URL = 'https://api.bayna-backend-api.tech/api';
+        
+        async function loadSeller() {
+            if (!sellerId) {
+                showError();
+                return;
+            }
+            
+            try {
+                const response = await fetch(`${API_BASE_URL}/sellers/${sellerId}`);
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}`);
+                }
+                
+                const seller = await response.json();
+                
+                if (!seller || !seller.id) {
+                    showError();
+                    return;
+                }
+                
+                renderSeller(seller);
+                
+                // Auto redirect to app after 1.5 seconds
+                setTimeout(() => {
+                    window.location.href = `makit://view-sellers-store/${sellerId}`;
+                }, 1500);
+                
+            } catch (error) {
+                console.error('Error loading seller:', error);
+                showError();
+            }
+        }
+        
+        function renderSeller(seller) {
+            // Handle image URLs
+            let coverUrl = 'https://contehsaidue.github.io/makit-legal/assets/bayna-white-logo.png';
+            let avatarUrl = '';
+            
+            if (seller.businessCoverLogo && (seller.businessCoverLogo.startsWith('http://') || seller.businessCoverLogo.startsWith('https://'))) {
+                coverUrl = seller.businessCoverLogo;
+            }
+            
+            if (seller.businessProfileLogo && (seller.businessProfileLogo.startsWith('http://') || seller.businessProfileLogo.startsWith('https://'))) {
+                avatarUrl = seller.businessProfileLogo;
+            } else if (seller.user?.avatar && (seller.user.avatar.startsWith('http://') || seller.user.avatar.startsWith('https://'))) {
+                avatarUrl = seller.user.avatar;
+            }
+            
+            const businessName = seller.businessName || seller.user?.name || 'Store';
+            const category = seller.businessCategory || 'General Store';
+            const location = seller.businessAddress || seller.user?.defaultAddress?.street || seller.user?.location || 'Sierra Leone';
+            const rating = seller.rating || 0;
+            const totalReviews = seller.totalReviews || seller._count?.reviews || 0;
+            const totalProducts = seller._count?.products || seller.stats?.totalProducts || 0;
+            const totalSales = seller.sales || 0;
+            const isVerified = seller.isVerified || false;
+            const description = seller.description || `${businessName} is a trusted seller on Bayna, offering quality products to customers across Sierra Leone.`;
+            
+            // Fetch products for preview
+            fetchProducts(sellerId);
+            
+            // Update page title and meta tags for WhatsApp preview
+            document.title = `Bayna - ${businessName}`;
+            updateMetaTag('og:title', businessName);
+            updateMetaTag('og:description', `${rating}★ | ${totalSales}+ sales | ${totalProducts} products`);
+            updateMetaTag('og:image', avatarUrl || coverUrl);
+            updateMetaTag('og:url', `https://contehsaidue.github.io/makit-legal/seller.html?id=${sellerId}`);
+            updateMetaTag('twitter:title', businessName);
+            updateMetaTag('twitter:description', `${rating}★ | ${totalSales}+ sales`);
+            updateMetaTag('twitter:image', avatarUrl || coverUrl);
+            
+            // Generate star rating display
+            const fullStars = Math.floor(rating);
+            const hasHalfStar = rating % 1 >= 0.5;
+            let starsHtml = '';
+            for (let i = 0; i < fullStars; i++) starsHtml += '<span class="star">★</span>';
+            if (hasHalfStar) starsHtml += '<span class="star">½</span>';
+            for (let i = 0; i < 5 - Math.ceil(rating); i++) starsHtml += '<span class="star" style="opacity:0.3;">★</span>';
+            
+            const firstLetter = businessName.charAt(0).toUpperCase();
+            
+            // Render HTML
+            document.getElementById('content').innerHTML = `
+                <div class="cover-container">
+                    <img src="${coverUrl}" alt="${escapeHtml(businessName)}" class="cover-image" onerror="this.style.display='none'">
+                    <div class="avatar-container">
+                        ${avatarUrl ? 
+                            `<img src="${avatarUrl}" alt="${escapeHtml(businessName)}" class="avatar-image" onerror="this.parentElement.innerHTML='<div class=\'avatar-placeholder\'>${escapeHtml(firstLetter)}</div>'">` :
+                            `<div class="avatar-placeholder">${escapeHtml(firstLetter)}</div>`
+                        }
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="store-name">
+                        ${escapeHtml(businessName)}
+                        ${isVerified ? '<span class="verified-badge">✓ Verified</span>' : ''}
+                    </div>
+                    <div class="store-category">📂 ${escapeHtml(category)}</div>
+                    <div class="store-location">📍 ${escapeHtml(location)}</div>
+                    <div class="store-rating">
+                        ${starsHtml}
+                        <span style="margin-left: 8px;">${rating}★ (${totalReviews} reviews)</span>
+                    </div>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-number">${totalProducts}</div>
+                            <div class="stat-label">Products</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">${totalSales.toLocaleString()}+</div>
+                            <div class="stat-label">Sales</div>
+                        </div>
+                    </div>
+                    
+                    <div class="description-section">
+                        <div class="description-title">About This Store</div>
+                        <div class="description-text">${escapeHtml(description.substring(0, 200))}${description.length > 200 ? '...' : ''}</div>
+                    </div>
+                    
+                    <div id="products-preview" class="products-preview" style="display: none;">
+                        <div class="products-title">🛍️ Popular Products</div>
+                        <div id="products-list"></div>
+                    </div>
+                    
+                    <button class="open-button" onclick="openApp()">
+                        Open in Bayna App
+                    </button>
+                    
+                    <button class="download-button" onclick="downloadApp()">
+                        Download Bayna
+                    </button>
+                </div>
+                <div class="footer">
+                    <p>The Unified Marketplace</p>
+                    <p style="font-size: 11px; margin-top: 8px;">Buy • Sell & Book Services in Sierra Leone</p>
+                </div>
+            `;
+        }
+        
+        async function fetchProducts(sellerId) {
+            try {
+                const response = await fetch(`${API_BASE_URL}/sellers/${sellerId}/products?limit=5`);
+                
+                if (!response.ok) {
+                    return;
+                }
+                
+                const data = await response.json();
+                const products = data.products || [];
+                
+                if (products.length > 0) {
+                    const productsHtml = products.map(product => 
+                        `<span class="product-tag">${escapeHtml(product.title.substring(0, 30))}${product.title.length > 30 ? '...' : ''}</span>`
+                    ).join('');
+                    
+                    const previewDiv = document.getElementById('products-preview');
+                    const productsList = document.getElementById('products-list');
+                    
+                    if (previewDiv && productsList) {
+                        productsList.innerHTML = productsHtml;
+                        previewDiv.style.display = 'block';
+                    }
+                }
+            } catch (error) {
+                console.error('Error fetching products:', error);
+            }
+        }
+        
+        function openApp() {
+            window.location.href = `makit://view-sellers-store/${sellerId}`;
+            
+            setTimeout(() => {
+                const fallbackMsg = document.createElement('div');
+                fallbackMsg.style.cssText = 'position:fixed;bottom:20px;left:20px;right:20px;background:#333;color:white;padding:12px;border-radius:12px;text-align:center;z-index:1000';
+                fallbackMsg.innerText = 'Don\'t have Bayna? Tap "Download Bayna" below';
+                document.body.appendChild(fallbackMsg);
+                setTimeout(() => fallbackMsg.remove(), 3000);
+            }, 2000);
+        }
+        
+        function downloadApp() {
+            const isIOS = /iPhone|iPad|iPod/.test(navigator.userAgent);
+            const isAndroid = /Android/.test(navigator.userAgent);
+            
+            if (isIOS) {
+                window.location.href = 'https://apps.apple.com/app/idYOUR_APP_ID';
+            } else if (isAndroid) {
+                window.location.href = 'https://play.google.com/store/apps/details?id=com.anonymous.makit';
+            } else {
+                alert('Download Bayna from your device\'s app store');
+            }
+        }
+        
+        function updateMetaTag(name, content) {
+            let meta = document.querySelector(`meta[property="${name}"]`);
+            if (meta) {
+                meta.setAttribute('content', content);
+            }
+        }
+        
+        function escapeHtml(str) {
+            if (!str) return '';
+            return str.replace(/[&<>]/g, function(m) {
+                if (m === '&') return '&amp;';
+                if (m === '<') return '&lt;';
+                if (m === '>') return '&gt;';
+                return m;
+            });
+        }
+        
+        function showError() {
+            document.getElementById('content').innerHTML = `
+                <div class="error">
+                    <h2>Store Not Found</h2>
+                    <p>This store may not exist or is no longer available.</p>
+                    <button class="download-button" style="margin-top: 20px;" onclick="window.location.href='https://contehsaidue.github.io/makit-legal/'">
+                        Visit Bayna
+                    </button>
+                </div>
+            `;
+        }
+        
+        // Load seller when page loads
+        loadSeller();
+    </script>
+</body>
+</html>
