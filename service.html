@@ -218,11 +218,10 @@
     </div>
     
     <script>
-        // Get service ID from URL
+       
         const urlParams = new URLSearchParams(window.location.search);
         const serviceId = urlParams.get('id');
         
-        // Your production API URL
         const API_BASE_URL = 'https://api.bayna-backend-api.tech/api';
         
         async function loadService() {
@@ -247,7 +246,6 @@
                 
                 renderService(service);
                 
-                // Auto redirect to app after 1 second
                 setTimeout(() => {
                     window.location.href = `makit://services/${serviceId}`;
                 }, 1000);
@@ -278,7 +276,6 @@
             const reviewCount = service.totalReviews || 0;
             const providerName = service.provider?.businessName || service.seller?.businessName || service.provider?.user?.name || 'Service Provider';
             
-            // Update page title and meta tags for WhatsApp preview
             document.title = `Bayna - ${service.title}`;
             updateMetaTag('og:title', service.title);
             updateMetaTag('og:description', `Le ${price.toLocaleString()} | ⭐ ${rating}★ (${reviewCount} reviews)`);
@@ -288,7 +285,6 @@
             updateMetaTag('twitter:description', `Le ${price.toLocaleString()} | ⭐ ${rating}★`);
             updateMetaTag('twitter:image', imageUrl);
             
-            // Generate star rating display
             const fullStars = Math.floor(rating);
             const hasHalfStar = rating % 1 >= 0.5;
             let starsHtml = '';
@@ -330,7 +326,7 @@
                     </button>
                 </div>
                 <div class="footer">
-                    <p>🇸🇱 The Unified Marketplace</p>
+                    <p>The Unified Marketplace</p>
                     <p style="font-size: 11px; margin-top: 8px;">Buy • Sell & Book Services in Sierra Leone</p>
                 </div>
             `;
@@ -339,7 +335,6 @@
         function openApp() {
             window.location.href = `makit://services/${serviceId}`;
             
-            // Fallback: if app doesn't open after 2 seconds, show message
             setTimeout(() => {
                 const fallbackMsg = document.createElement('div');
                 fallbackMsg.style.cssText = 'position:fixed;bottom:20px;left:20px;right:20px;background:#333;color:white;padding:12px;border-radius:12px;text-align:center;z-index:1000';
@@ -391,7 +386,6 @@
             `;
         }
         
-        // Load service when page loads
         loadService();
     </script>
 </body>
