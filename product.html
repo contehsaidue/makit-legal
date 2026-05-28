@@ -6,7 +6,7 @@
     
     <!-- Open Graph / WhatsApp Preview Tags -->
     <meta property="og:title" content="PRODUCT_TITLE" />
-    <meta property="og:description" content="PRICE | RATING★ - Buy on Bayna" />
+    <meta property="og:description" content="PRICE - Buy on Bayna" />
     <meta property="og:image" content="PRODUCT_IMAGE_URL" />
     <meta property="og:url" content="https://contehsaidue.github.io/makit-legal/product.html?id=PRODUCT_ID" />
     <meta property="og:type" content="product" />
@@ -168,8 +168,7 @@
                     return;
                 }
                 renderProduct(product);
-                
-                // Try to open app automatically
+    
                 setTimeout(() => {
                     window.location.href = `makit://products/${productId}`;
                 }, 500);
@@ -226,7 +225,6 @@
         function openApp() {
             window.location.href = `makit://products/${productId}`;
             
-            // Fallback: if app doesn't open after 2 seconds, show download option
             setTimeout(() => {
                 document.getElementById('fallback-message').style.display = 'block';
             }, 2000);
