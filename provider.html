@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    
+    <!-- Open Graph / WhatsApp Preview Tags -->
+    <meta property="og:title" content="Bayna - Service Provider" />
+    <meta property="og:description" content="Professional service provider on Bayna" />
+    <meta property="og:image" content="https://contehsaidue.github.io/makit-legal/assets/bayna-white-logo.png" />
+    <meta property="og:url" content="https://contehsaidue.github.io/makit-legal/provider.html?id=PROVIDER_ID" />
+    <meta property="og:type" content="profile" />
+    <meta property="og:site_name" content="Bayna Marketplace" />
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Bayna Service Provider" />
+    <meta name="twitter:description" content="View portfolio and services" />
+    <meta name="twitter:image" content="https://contehsaidue.github.io/makit-legal/assets/bayna-white-logo.png" />
+    
+    <title>Bayna - Service Provider</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: #f7fafc;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 400px;
+            width: 100%;
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            text-align: center;
+        }
+        
+        .image-container {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .provider-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .default-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 80px;
+        }
+        
+        .avatar-container {
+            position: absolute;
+            bottom: -40px;
+            left: 20px;
+            width: 80px;
+            height: 80px;
+            border-radius: 40px;
+            background: white;
+            border: 3px solid white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        .avatar-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .avatar-placeholder {
+            width: 100%;
+            height: 100%;
+            background: #4CAF50;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            font-weight: bold;
+            color: white;
+        }
+        
+        .content {
+            padding: 24px;
+            padding-top: 56px;
+        }
+        
+        .provider-name {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1a202c;
+            margin-bottom: 4px;
+            line-height: 1.3;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        
+        .verified-badge {
+            background: #2563EB;
+            color: white;
+            font-size: 12px;
+            padding: 4px 8px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+        
+        .provider-category {
+            font-size: 14px;
+            color: #6B7280;
+            margin-bottom: 16px;
+        }
+        
+        .provider-rating {
+            color: #6B7280;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            flex-wrap: wrap;
+        }
+        
+        .star {
+            color: #FFD700;
+            font-size: 18px;
+        }
+        
+        .stats-grid {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 24px;
+            gap: 12px;
+        }
+        
+        .stat-card {
+            flex: 1;
+            background: #f8f9fa;
+            padding: 12px;
+            border-radius: 12px;
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 20px;
+            font-weight: 700;
+            color: #2563EB;
+        }
+        
+        .stat-label {
+            font-size: 11px;
+            color: #6B7280;
+            margin-top: 4px;
+        }
+        
+        .info-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 0;
+            border-bottom: 1px solid #E5E7EB;
+        }
+        
+        .info-row:last-child {
+            border-bottom: none;
+        }
+        
+        .info-icon {
+            width: 24px;
+            font-size: 20px;
+        }
+        
+        .info-content {
+            flex: 1;
+        }
+        
+        .info-label {
+            font-size: 12px;
+            color: #6B7280;
+        }
+        
+        .info-value {
+            font-size: 14px;
+            color: #1a202c;
+            font-weight: 500;
+        }
+        
+        .description-section {
+            margin-top: 20px;
+            padding: 16px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            text-align: left;
+        }
+        
+        .description-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #1a202c;
+            margin-bottom: 8px;
+        }
+        
+        .description-text {
+            font-size: 14px;
+            color: #6B7280;
+            line-height: 1.5;
+        }
+        
+        .open-button {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 16px 24px;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 12px;
+            width: 100%;
+            cursor: pointer;
+            margin-bottom: 16px;
+            transition: background 0.3s;
+        }
+        
+        .open-button:hover {
+            background: #45a049;
+        }
+        
+        .download-button {
+            background: #2563EB;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 12px;
+            width: 100%;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .download-button:hover {
+            background: #1D4ED8;
+        }
+        
+        .footer {
+            background: #F9FAFB;
+            padding: 20px;
+            font-size: 12px;
+            color: #6B7280;
+            border-top: 1px solid #E5E7EB;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #6B7280;
+        }
+        
+        .loader {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #4CAF50;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 12px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .error {
+            text-align: center;
+            padding: 40px;
+            color: #EF4444;
+        }
+        
+        .services-preview {
+            margin-top: 20px;
+            padding: 16px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            text-align: left;
+        }
+        
+        .services-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #1a202c;
+            margin-bottom: 12px;
+        }
+        
+        .service-tag {
+            display: inline-block;
+            background: #E5E7EB;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            color: #4B5563;
+            margin: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="content">
+        <div class="loading">
+            <div class="loader"></div>
+            <div>Loading provider details...</div>
+        </div>
+    </div>
+    
+    <script>
+        // Get provider ID from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const providerId = urlParams.get('id');
+        
+        const API_BASE_URL = 'https://api.bayna-backend-api.tech/api';
+        
+        async function loadProvider() {
+            if (!providerId) {
+                showError();
+                return;
+            }
+            
+            try {
+                const response = await fetch(`${API_BASE_URL}/service-providers/${providerId}`);
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}`);
+                }
+                
+                const provider = await response.json();
+                
+                if (!provider || !provider.id) {
+                    showError();
+                    return;
+                }
+                
+                renderProvider(provider);
+                
+                // Auto redirect to app after 1.5 seconds
+                setTimeout(() => {
+                    window.location.href = `makit://provider/${providerId}`;
+                }, 1500);
+                
+            } catch (error) {
+                console.error('Error loading provider:', error);
+                showError();
+            }
+        }
+        
+        function renderProvider(provider) {
+            // Handle image URL
+            let imageUrl = 'https://contehsaidue.github.io/makit-legal/assets/bayna-white-logo.png';
+            let avatarUrl = provider.user?.avatar || '';
+            
+            if (provider.image && (provider.image.startsWith('http://') || provider.image.startsWith('https://'))) {
+                imageUrl = provider.image;
+            } else if (provider.businessProfileLogo && (provider.businessProfileLogo.startsWith('http://') || provider.businessProfileLogo.startsWith('https://'))) {
+                imageUrl = provider.businessProfileLogo;
+            }
+            
+            if (avatarUrl && !avatarUrl.startsWith('http')) {
+                avatarUrl = '';
+            }
+            
+            const businessName = provider.businessName || provider.name || 'Service Provider';
+            const userName = provider.user?.name || businessName;
+            const category = provider.businessCategory || provider.specialty || 'Professional Services';
+            const rating = provider.rating || 0;
+            const totalReviews = provider.totalReviews || provider._count?.reviews || 0;
+            const servicesCount = provider._count?.services || provider.totalServices || 0;
+            const completedJobs = provider.servicesCompleted || provider.totalJobs || 0;
+            const isVerified = provider.isVerified || false;
+            const experience = provider.experience || '1+ years';
+            const location = provider.location || provider.user?.location || 'Sierra Leone';
+            const description = provider.description || `${businessName} is a trusted service provider on Bayna, offering quality services to customers across Sierra Leone.`;
+            
+            // Fetch services for preview
+            fetchServices(providerId);
+            
+            // Update page title and meta tags for WhatsApp preview
+            document.title = `Bayna - ${businessName}`;
+            updateMetaTag('og:title', businessName);
+            updateMetaTag('og:description', `${rating}★ | ${completedJobs}+ jobs completed | ${servicesCount} services offered`);
+            updateMetaTag('og:image', imageUrl);
+            updateMetaTag('og:url', `https://contehsaidue.github.io/makit-legal/provider.html?id=${providerId}`);
+            updateMetaTag('twitter:title', businessName);
+            updateMetaTag('twitter:description', `${rating}★ | ${completedJobs}+ jobs completed`);
+            updateMetaTag('twitter:image', imageUrl);
+            
+            // Generate star rating display
+            const fullStars = Math.floor(rating);
+            const hasHalfStar = rating % 1 >= 0.5;
+            let starsHtml = '';
+            for (let i = 0; i < fullStars; i++) starsHtml += '<span class="star">★</span>';
+            if (hasHalfStar) starsHtml += '<span class="star">½</span>';
+            for (let i = 0; i < 5 - Math.ceil(rating); i++) starsHtml += '<span class="star" style="opacity:0.3;">★</span>';
+            
+            const firstLetter = businessName.charAt(0).toUpperCase();
+            
+            // Render HTML
+            document.getElementById('content').innerHTML = `
+                <div class="image-container">
+                    <img src="${imageUrl}" alt="${escapeHtml(businessName)}" class="provider-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                    <div class="default-icon" style="display: none;">🔧</div>
+                    <div class="avatar-container">
+                        ${avatarUrl ? 
+                            `<img src="${avatarUrl}" alt="${escapeHtml(businessName)}" class="avatar-image">` :
+                            `<div class="avatar-placeholder">${escapeHtml(firstLetter)}</div>`
+                        }
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="provider-name">
+                        ${escapeHtml(businessName)}
+                        ${isVerified ? '<span class="verified-badge">✓ Verified</span>' : ''}
+                    </div>
+                    <div class="provider-category">${escapeHtml(category)}</div>
+                    <div class="provider-rating">
+                        ${starsHtml}
+                        <span style="margin-left: 8px;">${rating}★ (${totalReviews} reviews)</span>
+                    </div>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-number">${servicesCount}</div>
+                            <div class="stat-label">Services</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">${completedJobs.toLocaleString()}+</div>
+                            <div class="stat-label">Jobs Completed</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">${experience}</div>
+                            <div class="stat-label">Experience</div>
+                        </div>
+                    </div>
+                    
+                    <div class="info-row">
+                        <div class="info-icon">📍</div>
+                        <div class="info-content">
+                            <div class="info-label">Location</div>
+                            <div class="info-value">${escapeHtml(location)}</div>
+                        </div>
+                    </div>
+                    
+                    <div class="info-row">
+                        <div class="info-icon">👤</div>
+                        <div class="info-content">
+                            <div class="info-label">Provider</div>
+                            <div class="info-value">${escapeHtml(userName)}</div>
+                        </div>
+                    </div>
+                    
+                    <div class="description-section">
+                        <div class="description-title">About This Provider</div>
+                        <div class="description-text">${escapeHtml(description.substring(0, 200))}${description.length > 200 ? '...' : ''}</div>
+                    </div>
+                    
+                    <div id="services-preview" class="services-preview" style="display: none;">
+                        <div class="services-title">📋 Popular Services</div>
+                        <div id="services-list"></div>
+                    </div>
+                    
+                    <button class="open-button" onclick="openApp()">
+                        Open in Bayna App
+                    </button>
+                    
+                    <button class="download-button" onclick="downloadApp()">
+                        Download Bayna
+                    </button>
+                </div>
+                <div class="footer">
+                    <p>The Unified Marketplace</p>
+                    <p style="font-size: 11px; margin-top: 8px;">Buy • Sell & Book Services in Sierra Leone</p>
+                </div>
+            `;
+        }
+        
+        async function fetchServices(providerId) {
+            try {
+                const response = await fetch(`${API_BASE_URL}/service-providers/${providerId}/services?limit=5`);
+                
+                if (!response.ok) {
+                    return;
+                }
+                
+                const data = await response.json();
+                const services = data.services || [];
+                
+                if (services.length > 0) {
+                    const servicesHtml = services.map(service => 
+                        `<span class="service-tag">${escapeHtml(service.title.substring(0, 30))}${service.title.length > 30 ? '...' : ''}</span>`
+                    ).join('');
+                    
+                    const previewDiv = document.getElementById('services-preview');
+                    const servicesList = document.getElementById('services-list');
+                    
+                    if (previewDiv && servicesList) {
+                        servicesList.innerHTML = servicesHtml;
+                        previewDiv.style.display = 'block';
+                    }
+                }
+            } catch (error) {
+                console.error('Error fetching services:', error);
+            }
+        }
+        
+        function openApp() {
+            window.location.href = `makit://service-providers/${providerId}`;
+            
+            setTimeout(() => {
+                const fallbackMsg = document.createElement('div');
+                fallbackMsg.style.cssText = 'position:fixed;bottom:20px;left:20px;right:20px;background:#333;color:white;padding:12px;border-radius:12px;text-align:center;z-index:1000';
+                fallbackMsg.innerText = 'Don\'t have Bayna? Tap "Download Bayna" below';
+                document.body.appendChild(fallbackMsg);
+                setTimeout(() => fallbackMsg.remove(), 3000);
+            }, 2000);
+        }
+        
+        function downloadApp() {
+            const isIOS = /iPhone|iPad|iPod/.test(navigator.userAgent);
+            const isAndroid = /Android/.test(navigator.userAgent);
+            
+            if (isIOS) {
+                window.location.href = 'https://apps.apple.com/app/idYOUR_APP_ID';
+            } else if (isAndroid) {
+                window.location.href = 'https://play.google.com/store/apps/details?id=com.anonymous.makit';
+            } else {
+                alert('Download Bayna from your device\'s app store');
+            }
+        }
+        
+        function updateMetaTag(name, content) {
+            let meta = document.querySelector(`meta[property="${name}"]`);
+            if (meta) {
+                meta.setAttribute('content', content);
+            }
+        }
+        
+        function escapeHtml(str) {
+            if (!str) return '';
+            return str.replace(/[&<>]/g, function(m) {
+                if (m === '&') return '&amp;';
+                if (m === '<') return '&lt;';
+                if (m === '>') return '&gt;';
+                return m;
+            });
+        }
+        
+        function showError() {
+            document.getElementById('content').innerHTML = `
+                <div class="error">
+                    <h2>Provider Not Found</h2>
+                    <p>This service provider may not be available or no longer exists.</p>
+                    <button class="download-button" style="margin-top: 20px;" onclick="window.location.href='https://contehsaidue.github.io/makit-legal/'">
+                        Visit Bayna
+                    </button>
+                </div>
+            `;
+        }
+        
+        loadProvider();
+    </script>
+</body>
+</html>
