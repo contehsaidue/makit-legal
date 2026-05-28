@@ -147,12 +147,11 @@
     </div>
     
     <script>
-        // Get product ID from URL
+       
         const urlParams = new URLSearchParams(window.location.search);
         const productId = urlParams.get('id');
         
-        // Your API URL (use production URL)
-        const API_BASE_URL = 'https://your-production-api.com'; // Change this to your production API
+        const API_BASE_URL = 'https://api.bayna-backend-api.tech/api'; 
         
         async function loadProduct() {
             if (!productId) {
@@ -161,11 +160,13 @@
             }
             
             try {
-                // Fetch product details from your API
+                
                 const response = await fetch(`${API_BASE_URL}/products/${productId}`);
                 const product = await response.json();
-                
-                // Render product page
+                if (!product) {
+                    showError();
+                    return;
+                }
                 renderProduct(product);
                 
                 // Try to open app automatically
@@ -180,9 +181,9 @@
         }
         
         function renderProduct(product) {
-            const imageUrl = product.images && product.images.length > 0 
-                ? product.images[0] 
-                : 'https://via.placeholder.com/400x250?text=Bayna';
+           const imageUrl = product.images && product.images.length > 0 
+    ? product.images[0] 
+    : 'https://contehsaidue.github.io/makit-legal/assets/bayna-white-logo.png';
             
             const price = product.discountedPrice || product.originalPrice || 0;
             const rating = product.rating || 0;
@@ -191,10 +192,10 @@
             // Update page title and meta tags
             document.title = `Bayna - ${product.title}`;
             updateMetaTag('og:title', product.title);
-            updateMetaTag('og:description', `Le ${price} | ⭐ ${rating}★ (${reviewCount} reviews)`);
+            updateMetaTag('og:description', `SLL ${price} | (${reviewCount} reviews)`);
             updateMetaTag('og:image', imageUrl);
             updateMetaTag('twitter:title', product.title);
-            updateMetaTag('twitter:description', `Le ${price} | ⭐ ${rating}★`);
+            updateMetaTag('twitter:description', `SLL ${price}`);
             updateMetaTag('twitter:image', imageUrl);
             
             // Render HTML
@@ -204,8 +205,8 @@
                 </div>
                 <div class="content">
                     <h1 class="product-title">${escapeHtml(product.title)}</h1>
-                    <div class="product-price">Le ${price.toLocaleString()}</div>
-                    <div class="product-rating">⭐ ${rating}★ (${reviewCount} reviews)</div>
+                    <div class="product-price">SLL ${price.toLocaleString()}</div>
+                    <div class="product-rating">(${reviewCount} reviews)</div>
                     
                     <button class="open-button" onclick="openApp()">
                         Open in Bayna App
@@ -216,8 +217,8 @@
                     </button>
                 </div>
                 <div class="footer">
-                    <p>Sierra Leone's #1 Marketplace</p>
-                    <p style="font-size: 11px; margin-top: 8px;">Bayna - Buy & Sell in Sierra Leone</p>
+                    <p>The UnifiedMarketplace</p>
+                    <p style="font-size: 11px; margin-top: 8px;">Bayna - Buy Sell & Book Services in Sierra Leone</p>
                 </div>
             `;
         }
