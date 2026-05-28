@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    
+    <!-- Open Graph / WhatsApp Preview Tags -->
+    <meta property="og:title" content="PRODUCT_TITLE" />
+    <meta property="og:description" content="PRICE | RATING★ - Buy on Bayna" />
+    <meta property="og:image" content="PRODUCT_IMAGE_URL" />
+    <meta property="og:url" content="https://contehsaidue.github.io/makit-legal/product.html?id=PRODUCT_ID" />
+    <meta property="og:type" content="product" />
+    <meta property="og:site_name" content="Bayna Marketplace" />
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="PRODUCT_TITLE" />
+    <meta name="twitter:description" content="PRICE | RATING★" />
+    <meta name="twitter:image" content="PRODUCT_IMAGE_URL" />
+    
+    <title>Bayna - PRODUCT_TITLE</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: #f7fafc;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 400px;
+            width: 100%;
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            text-align: center;
+        }
+        
+        .image-container {
+            width: 100%;
+            height: 250px;
+            background: #f0f0f0;
+            overflow: hidden;
+        }
+        
+        .product-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .content {
+            padding: 24px;
+        }
+        
+        .product-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1a202c;
+            margin-bottom: 8px;
+        }
+        
+        .product-price {
+            font-size: 28px;
+            font-weight: 700;
+            color: #4CAF50;
+            margin-bottom: 8px;
+        }
+        
+        .product-rating {
+            color: #6B7280;
+            margin-bottom: 24px;
+        }
+        
+        .open-button {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 16px 24px;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 12px;
+            width: 100%;
+            cursor: pointer;
+            margin-bottom: 16px;
+            transition: background 0.3s;
+        }
+        
+        .open-button:hover {
+            background: #45a049;
+        }
+        
+        .download-button {
+            background: #2563EB;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 12px;
+            width: 100%;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .download-button:hover {
+            background: #1D4ED8;
+        }
+        
+        .footer {
+            background: #F9FAFB;
+            padding: 20px;
+            font-size: 12px;
+            color: #6B7280;
+            border-top: 1px solid #E5E7EB;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #6B7280;
+        }
+        
+        .error {
+            text-align: center;
+            padding: 40px;
+            color: #EF4444;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="content">
+        <div class="loading">
+            <div>Loading product...</div>
+        </div>
+    </div>
+    
+    <script>
+        // Get product ID from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = urlParams.get('id');
+        
+        // Your API URL (use production URL)
+        const API_BASE_URL = 'https://your-production-api.com'; // Change this to your production API
+        
+        async function loadProduct() {
+            if (!productId) {
+                showError();
+                return;
+            }
+            
+            try {
+                // Fetch product details from your API
+                const response = await fetch(`${API_BASE_URL}/products/${productId}`);
+                const product = await response.json();
+                
+                // Render product page
+                renderProduct(product);
+                
+                // Try to open app automatically
+                setTimeout(() => {
+                    window.location.href = `makit://products/${productId}`;
+                }, 500);
+                
+            } catch (error) {
+                console.error('Error loading product:', error);
+                showError();
+            }
+        }
+        
+        function renderProduct(product) {
+            const imageUrl = product.images && product.images.length > 0 
+                ? product.images[0] 
+                : 'https://via.placeholder.com/400x250?text=Bayna';
+            
+            const price = product.discountedPrice || product.originalPrice || 0;
+            const rating = product.rating || 0;
+            const reviewCount = product.totalReviews || 0;
+            
+            // Update page title and meta tags
+            document.title = `Bayna - ${product.title}`;
+            updateMetaTag('og:title', product.title);
+            updateMetaTag('og:description', `Le ${price} | ⭐ ${rating}★ (${reviewCount} reviews)`);
+            updateMetaTag('og:image', imageUrl);
+            updateMetaTag('twitter:title', product.title);
+            updateMetaTag('twitter:description', `Le ${price} | ⭐ ${rating}★`);
+            updateMetaTag('twitter:image', imageUrl);
+            
+            // Render HTML
+            document.getElementById('content').innerHTML = `
+                <div class="image-container">
+                    <img src="${imageUrl}" alt="${product.title}" class="product-image">
+                </div>
+                <div class="content">
+                    <h1 class="product-title">${escapeHtml(product.title)}</h1>
+                    <div class="product-price">Le ${price.toLocaleString()}</div>
+                    <div class="product-rating">⭐ ${rating}★ (${reviewCount} reviews)</div>
+                    
+                    <button class="open-button" onclick="openApp()">
+                        Open in Bayna App
+                    </button>
+                    
+                    <button class="download-button" onclick="downloadApp()">
+                        Download Bayna
+                    </button>
+                </div>
+                <div class="footer">
+                    <p>Sierra Leone's #1 Marketplace</p>
+                    <p style="font-size: 11px; margin-top: 8px;">Bayna - Buy & Sell in Sierra Leone</p>
+                </div>
+            `;
+        }
+        
+        function openApp() {
+            window.location.href = `makit://products/${productId}`;
+            
+            // Fallback: if app doesn't open after 2 seconds, show download option
+            setTimeout(() => {
+                document.getElementById('fallback-message').style.display = 'block';
+            }, 2000);
+        }
+        
+        function downloadApp() {
+            // Redirect to App Store / Play Store
+            const isIOS = /iPhone|iPad|iPod/.test(navigator.userAgent);
+            const isAndroid = /Android/.test(navigator.userAgent);
+            
+            if (isIOS) {
+                window.location.href = 'https://apps.apple.com/app/idYOUR_APP_ID';
+            } else if (isAndroid) {
+                window.location.href = 'https://play.google.com/store/apps/details?id=com.anonymous.makit';
+            } else {
+                alert('Download Bayna from your device\'s app store');
+            }
+        }
+        
+        function updateMetaTag(name, content) {
+            let meta = document.querySelector(`meta[property="${name}"]`);
+            if (meta) {
+                meta.setAttribute('content', content);
+            }
+        }
+        
+        function escapeHtml(str) {
+            if (!str) return '';
+            return str.replace(/[&<>]/g, function(m) {
+                if (m === '&') return '&amp;';
+                if (m === '<') return '&lt;';
+                if (m === '>') return '&gt;';
+                return m;
+            });
+        }
+        
+        function showError() {
+            document.getElementById('content').innerHTML = `
+                <div class="error">
+                    <h2>Product Not Found</h2>
+                    <p>This product may have been removed or is no longer available.</p>
+                    <button class="download-button" style="margin-top: 20px;" onclick="window.location.href='https://contehsaidue.github.io/makit-legal/'">
+                        Visit Bayna
+                    </button>
+                </div>
+            `;
+        }
+        
+        // Load product when page loads
+        loadProduct();
+    </script>
+</body>
+</html>
